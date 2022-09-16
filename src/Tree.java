@@ -10,12 +10,14 @@ public class Tree {
 	private String contents = ""; 
 	private String hashedContents;
 	public Tree (ArrayList <String> list) throws IOException {
-		for (int i = 0; i < list.size(); i++) {
+		for (int i = 0; i < list.size() - 1; i++) {
 			contents += list.get(i); 
 			contents += "\n";
 		}
+		contents += list.get(list.size()-1);
 		
 		hashedContents = genHash(contents);
+		
 		
 		File f = new File ("./objects/" + hashedContents);
 		
@@ -25,6 +27,7 @@ public class Tree {
 			fw.write(list.get(i)); 
 			fw.write("\n");
 		}
+		fw.close(); 
 	}
 	
 	public String genHash (String input) {
