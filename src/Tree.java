@@ -21,7 +21,6 @@ public class Tree {
 		
 		File f = new File ("./objects/" + hashedContents);
 		
-		
 		FileWriter fw = new FileWriter(f);
 		for (int i = 0; i < list.size(); i++) {
 			fw.write(list.get(i)); 
