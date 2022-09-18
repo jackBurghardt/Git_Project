@@ -2,6 +2,10 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
@@ -18,7 +22,6 @@ public class Tree {
 		
 		hashedContents = genHash(contents);
 		
-		
 		File f = new File ("./objects/" + hashedContents);
 		
 		FileWriter fw = new FileWriter(f);
@@ -26,7 +29,7 @@ public class Tree {
 			fw.write(list.get(i)); 
 			fw.write("\n");
 		}
-		fw.close(); 
+		fw.close();
 	}
 	
 	public String genHash (String input) {
