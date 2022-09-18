@@ -30,8 +30,8 @@ class TreeTester {
 	void test() throws IOException {
 		// Creates a tree which should write out the file
 		Tree tree = new Tree(robotics);
-		// The combined SHA1 should be f692ce3bc466086b97b348d87bf39cbd0a59d06a
-		String SHA1 = "f692ce3bc466086b97b348d87bf39cbd0a59d06a";
+		// The combined SHA1 should be c437772fc925f28bf60430317a982660fe68b1
+		String SHA1 = "c437772fc925f28bf60430317a982660fe68b1";
 		File file = new File(SHA1);
 		// Checks if the file with the right SHA1 name exists
 		assertTrue(file.exists());

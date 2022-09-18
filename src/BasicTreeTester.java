@@ -26,6 +26,5 @@ public class BasicTreeTester {
 		list.add("Kensuke : 2fa6905f03507615399918510f07657b129890fb");
 		Tree tree = new Tree(list);
 		
-		
 	}
 }
