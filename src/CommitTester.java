@@ -9,7 +9,7 @@ public class CommitTester {
 	public static void main(String[] args)
 	{
 		Commit c = new Commit("a","a","a", null);
-		System.out.println(c.getDate());
+		System.out.println(c.commitSHA1());
 	}
 
 }

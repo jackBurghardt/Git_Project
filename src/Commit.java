@@ -35,6 +35,20 @@ public class Commit {
 		
 	}
 	
+	public String commitSHA1()
+	{
+		String info = pTree + "\n";
+		if(previous != null)
+		{
+			info += previous + "\n";
+		}
+		info += author + "\n";
+		info += date + "\n";
+		info += summary + "\n";
+		System.out.println(info);
+		return generateSHA1(info);
+	}
+	
 	public String generateSHA1(String input)
 	{
 		String sha1 = "";
