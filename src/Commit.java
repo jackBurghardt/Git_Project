@@ -2,10 +2,11 @@ import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Formatter;
+import java.util.Date;
 
 public class Commit {
 	
-	public String pTree;
+	public String pTree = null;
 	public String summary;
 	public String author;
 	public String date;
@@ -18,13 +19,15 @@ public class Commit {
 		pTree = pTreeValue;
 		summary = summaryValue;
 		author = authorName;
+		date = getDate();
 		previous = parent;
 		next = null;
 	}
 	
 	public String getDate()
 	{
-		return date;
+		Date d = new Date();
+		return d.toString();
 	}
 	
 	public void writeFile()
