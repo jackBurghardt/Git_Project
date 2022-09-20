@@ -8,8 +8,9 @@ public class CommitTester {
 	
 	public static void main(String[] args)
 	{
-		Commit c = new Commit("a","a","a", null);
+		Commit c = new Commit("pTree","Testing Commit","Author", null);
 		System.out.println(c.commitSHA1());
+		c.writeFile();
 	}
 
 }

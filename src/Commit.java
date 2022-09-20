@@ -66,7 +66,6 @@ public class Commit {
 		info += author + "\n";
 		info += date + "\n";
 		info += summary + "\n";
-		System.out.println(info);
 		return generateSHA1(info);
 	}
 	
