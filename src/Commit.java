@@ -1,4 +1,9 @@
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Formatter;
@@ -32,7 +37,23 @@ public class Commit {
 	
 	public void writeFile()
 	{
+		String toWrite = pTree + "\n";
+		if(previous != null)
+			toWrite += "./objects/" + previous.commitSHA1();
+		toWrite += "\n";
+		if(next != null)
+			toWrite += "./objects/" + next.commitSHA1();
+		toWrite += "\n";
+		toWrite += author + "\n";
+		toWrite += date + "\n";
+		toWrite += summary + "\n";
 		
+		Path p = Paths.get("./objects/" + commitSHA1());
+        try {
+            Files.writeString(p, toWrite, StandardCharsets.ISO_8859_1);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 	
 	public String commitSHA1()
@@ -81,5 +102,4 @@ public class Commit {
 	    formatter.close();
 	    return result;
 	}
-
 }
